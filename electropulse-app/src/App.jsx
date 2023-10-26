@@ -3,6 +3,11 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../src/components/Home'
 import Login from '../src/components/login';
 import Signup from '../src/components/signup';
+import Footer from '../src/components/Footer';
+import Navbar from './components/Navbar';
+
+
+
 import './App.css'
 
 const App = () => {
@@ -14,6 +19,8 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/Navbar" element={<Navbar/>} />
+        <Route path="/Footer" element={<Footer/>} />
       </Routes>
     </div>
 

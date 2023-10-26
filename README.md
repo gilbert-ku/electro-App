@@ -1,1 +1,2 @@
 # ElectroPulse Application Backend
+## Features

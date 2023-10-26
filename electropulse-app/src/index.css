@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #D9D9D9; */
+}
+
+body {
+  background-color: #D9D9D9;
+  overflow-x: hidden;
+}
+
+.home-page{
+  /* background-color: orange; */
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/image/background.jpg);
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+} 

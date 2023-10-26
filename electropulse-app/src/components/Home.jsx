@@ -41,10 +41,12 @@ const Home  = () => {
             </section>
 
             {/* home - body */}
-            <section className="home-page">
-                <div className="container">
-                    <h1 className="fs-">Electro<span>Pulse</span></h1>
-                    
+            <section className="home-page opacity-100">
+                <div className="container title">
+                    <h1 className="f-s-1 text-center opacity-100 ">Electro<span className="text-white">Pulse</span></h1>
+                    <div className="container">
+
+                    </div>
                 </div>
             </section>
             

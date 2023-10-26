@@ -40,7 +40,13 @@ const Home  = () => {
                 </nav>
             </section>
 
-            
+            {/* home - body */}
+            <section className="home-page">
+                <div className="container">
+                    <h1 className="fs-">Electro<span>Pulse</span></h1>
+                    
+                </div>
+            </section>
             
         </>
     )

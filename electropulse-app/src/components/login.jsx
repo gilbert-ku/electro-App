@@ -5,7 +5,9 @@ import React from "react";
 const Login = () => {
     return (
         <div>
-            this is the login page
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+           
+            
         </div>
     )
 }

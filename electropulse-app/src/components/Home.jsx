@@ -2,6 +2,7 @@ import React from 'react';
 // import Navbar from './Navbar'
 
 
+
 const Home  = () => {
     return (
         <>
@@ -44,10 +45,92 @@ const Home  = () => {
             <section className="home-page opacity-100">
                 <div className="container title">
                     <h1 className="f-s-1 text-center opacity-100 ">Electro<span className="text-white">Pulse</span></h1>
-                    <div className="container">
-
-                    </div>
+                    
+                    
                 </div>
+                
+            </section>
+                {/* brand and cards */}
+            <section>
+            <div className="container">
+                {/* brand gutters */}
+                    <div class="container text-center">
+                        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Apple.jpg" 
+                                    class="img-fluid" 
+                                    alt="Apple Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Samsung.png" 
+                                    class="img-fluid" 
+                                    alt="Samsung Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Oppo.jpg" 
+                                    class="img-fluid" 
+                                    alt="Oppo Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Xiaomi.png" 
+                                    class="img-fluid" 
+                                    alt="Xiaomi Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Hisense.jpg" 
+                                    class="img-fluid" 
+                                    alt="Hisense Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/KE_BF22_Multichoice_FL.png" 
+                                    class="img-fluid" 
+                                    alt="Vitron Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Skyworth.png" 
+                                    class="img-fluid" 
+                                    alt="Skyworth Brand" 
+                                    />                                
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-2">
+                                    <img src="/img/Royal.jpg" 
+                                    class="img-fluid" 
+                                    alt="Royal Brand" 
+                                    />                                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
             </section>
             
         </>

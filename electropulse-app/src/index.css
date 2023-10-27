@@ -37,3 +37,8 @@ body {
   color: #F49F0A;
   
 }
+
+#cards {
+  width: 200px;
+  height: 200px;
+}

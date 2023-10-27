@@ -41,7 +41,22 @@ return (
                     <h1>{category.name}</h1>
                 </div>
               
-                
+                <div className=" row row-cols-2 row-cols-lg-4 g-1 g-lg-3 " id="parent-cards">
+                    {category.categories.map((nestedCategory) => (
+
+                        <div className="container">
+                            {/* cards */}
+                            <div 
+                            className="col shadow  p-2 m-1  my-3 bg-white rounded-3 border border-warning" id="cards"
+                            key={nestedCategory.ID}
+                            >
+                                {nestedCategory.name}
+                            </div>
+                        </div>
+                        
+                        
+                    ))}
+                </div>
             </div>
           ))}
         </div>

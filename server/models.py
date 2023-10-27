@@ -22,7 +22,9 @@ class Admin(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     contact = db.Column(db.String)
     password = db.Column(db.String(60), nullable=False)
+    address = db.Column(db.String(120), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    products = db.relationship('Products', backref='admin', lazy=True)
 
     def __repr__(self):
         return f"Admin('{self.name}', '{self.email}', '{self.id}')"
@@ -36,7 +38,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     contact = db.Column(db.String)
     password = db.Column(db.String(60), nullable=False)
-    address = db.relationship("Location", backref="user")
+    address = db.Column(db.String(120), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     cart = db.relationship('Cart', backref='user', lazy=True)
 
@@ -57,6 +59,8 @@ class Products(db.Model):
     name = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.Text, nullable=False)
+    category = db.Column(db.String(100), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f"Products('{self.name}', '{self.price}')"
@@ -68,20 +72,20 @@ class Cart(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = relationship("User", back_populates="cart")
     quantity = db.Column(db.Integer, nullable=False, default=1)
-
+    review = db.Column(db.String(200))
 
     def __repr__(self):
         return f"Cart('Product id:{self.product_id}','id: {self.id}','User id:{self.user_id}'')"
     
 
-class Reviews(db.Model):
-    __tablename__ = "reviews"
-    id = db.Column(db.Integer, primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
-    comment = db.Column(db.Text, nullable=False)
+# class Reviews(db.Model):
+#     __tablename__ = "reviews"
+#     id = db.Column(db.Integer, primary_key=True)
+#     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+#     rating = db.Column(db.Integer, nullable=False)
+#     comment = db.Column(db.Text, nullable=False)
 
-    def __repr__(self):
-        return f"Reviews('{self.product_id}', '{self.user_id}', '{self.rating}')"    
+#     def __repr__(self):
+#         return f"Reviews('{self.product_id}', '{self.user_id}', '{self.rating}')"    
 

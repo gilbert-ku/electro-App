@@ -1,5 +1,24 @@
 import React from 'react';
+import Cards from './Cards';
 // import Navbar from './Navbar'
+
+// import axios from 'axios';
+
+// const options = {
+//   method: 'GET',
+//   url: 'https://kohls.p.rapidapi.com/categories/list',
+//   headers: {
+//     'X-RapidAPI-Key': 'c355c9c215msh4ab47fb85d1669fp139939jsnbb46094711c3',
+//     'X-RapidAPI-Host': 'kohls.p.rapidapi.com'
+//   }
+// };
+
+// try {
+//   const response = await axios.request(options);
+//   console.log(response.data);
+// } catch (error) {
+//   console.error(error);
+// }
 
 
 
@@ -54,75 +73,75 @@ const Home  = () => {
             <section>
             <div className="container">
                 {/* brand gutters */}
-                    <div class="container text-center">
-                        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                            <div class="col">
-                                <div class="p-2">
+                    <div className="container text-center">
+                        <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Apple.jpg" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Apple Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Samsung.png" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Samsung Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Oppo.jpg" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Oppo Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Xiaomi.png" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Xiaomi Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Hisense.jpg" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Hisense Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/KE_BF22_Multichoice_FL.png" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Vitron Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Skyworth.png" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Skyworth Brand" 
                                     />                                
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <div class="p-2">
+                            <div className="col">
+                                <div className="p-2">
                                     <img src="/img/Royal.jpg" 
-                                    class="img-fluid" 
+                                    className="img-fluid" 
                                     alt="Royal Brand" 
                                     />                                
                                 </div>
@@ -131,6 +150,16 @@ const Home  = () => {
                         </div>
                         </div>
                     </div>
+            </section>
+
+            {/* viewed cards */}
+            <section className="viewed cards">
+
+            </section>
+
+            {/* cards */}
+            <section className="cards">
+                <Cards />
             </section>
             
         </>

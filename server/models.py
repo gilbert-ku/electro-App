@@ -1,7 +1,10 @@
 from flask import Flask, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from app import bcrypt
 from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy_serializer import SerializerMixin
+from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship
 # from flask_login import UserMixin
 from datetime import datetime
@@ -15,16 +18,29 @@ db = SQLAlchemy(metadata=metadata)
 # class User(db.Model, UserMixin):
 
 
-class Admin(db.Model):
+class Admin(db.Model, SerializerMixin):
     __tablename__ = "admin"    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     contact = db.Column(db.String)
-    password = db.Column(db.String(60), nullable=False)
     address = db.Column(db.String(120), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     products = db.relationship('Products', backref='admin', lazy=True)
+    _password_hash = db.Column(db.String(60), nullable=False)
+
+    @hybrid_property
+    def password_hash(self):
+        return{"message": "You can't view password hashes"}
+    
+    @password_hash.setter
+    def password_hash(self, password):
+        our_hash = bcrypt.generate_password_hash(password.encode('utf-8'))
+        self._password_hash = our_hash.decode('utf-8')
+
+    def validate_password(self, password):
+        is_valid = bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
+        return is_valid
 
     def __repr__(self):
         return f"Admin('{self.name}', '{self.email}', '{self.id}')"

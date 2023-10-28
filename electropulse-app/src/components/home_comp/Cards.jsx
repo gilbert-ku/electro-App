@@ -28,6 +28,13 @@ const Cards = () => {
     fetchData();
   }, []);
 
+
+  // onclick event for the recent views
+
+  const handleOnclick = () => {
+    
+  }
+
 return (
     <div className="container">
         {/* handles error message */}

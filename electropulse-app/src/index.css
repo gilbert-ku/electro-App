@@ -20,4 +20,25 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 50vh;
+  
+  
 } 
+.title {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  
+}
+.title h1{
+  opacity: 200%;
+  font-size: 300%;
+  font-size: 900;
+  padding-top: 25%;
+  color: #F49F0A;
+  
+}
+
+#cards {
+  width: 200px;
+  height: 200px;
+}

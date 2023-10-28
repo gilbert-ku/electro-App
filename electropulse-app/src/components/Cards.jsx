@@ -28,35 +28,35 @@ const Cards = () => {
     fetchData();
   }, []);
 
-return (
+  return (
     <div className="container">
-        {/* handles error message */}
+      {/* handles error message */}
       {error && <p>Error: {error.message}</p>}
       {data && (
         <div className="bg-light">
           {data.payload.categories.map((category) => (
             <div key={category.ID} className="container text-center my-5">
-                {/* category name */}
-                <div className="container bg-warning rounded-top-3 mb-3">
-                    <h1>{category.name}</h1>
-                </div>
-              
-                <div className=" row row-cols-2 row-cols-lg-4 g-1 g-lg-3 " id="parent-cards">
-                    {category.categories.map((nestedCategory) => (
+              {/* category name */}
+              <div className="container bg-warning rounded-top-3 mb-3">
+                <h1>{category.name}</h1>
+              </div>
 
-                        <div className="container">
-                            {/* cards */}
-                            <div 
-                            className="col shadow  p-2 m-1  my-3 bg-white rounded-3 border border-warning" id="cards"
-                            key={nestedCategory.ID}
-                            >
-                                {nestedCategory.name}
-                            </div>
-                        </div>
-                        
-                        
-                    ))}
-                </div>
+              <div className=" row row-cols-2 row-cols-lg-4 g-1 g-lg-3 " id="parent-cards">
+                {category.categories.map((nestedCategory) => (
+
+                  <div className="container">
+                    {/* cards */}
+                    <div
+                      className="col shadow  p-2 m-1  my-3 bg-white rounded-3 border border-warning" id="cards"
+                      key={nestedCategory.ID}
+                    >
+                      {nestedCategory.name}
+                    </div>
+                  </div>
+
+
+                ))}
+              </div>
             </div>
           ))}
         </div>

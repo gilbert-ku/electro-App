@@ -53,23 +53,36 @@ class User(db.Model):
     name = db.Column(db.String(20), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     contact = db.Column(db.String)
-    password = db.Column(db.String(60), nullable=False)
+    
     address = db.Column(db.String(120), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    cart = db.relationship('Cart', backref='user', lazy=True)
+    order = db.relationship('Order', backref='user', lazy=True)
+    _password_hash = db.Column(db.String(60), nullable=False)
+    @hybrid_property
+    def password_hash(self):
+        return{"message": "You can't view password hashes"}
+    
+    @password_hash.setter
+    def password_hash(self, password):
+        our_hash = bcrypt.generate_password_hash(password.encode('utf-8'))
+        self._password_hash = our_hash.decode('utf-8')
 
-    def add_to_cart(self,product_id):
-        item_to_add = Cart(product_id=product_id, user_id=self.id)
+    def validate_password(self, password):
+        is_valid = bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
+        return is_valid
+
+    def add_to_orders(self,product_id):
+        item_to_add = Order(product_id=product_id, user_id=self.id)
         db.session.add(item_to_add)
         db.session.commit()
-        flash('Your item has been added to your cart!', 'success')
+        flash('Your order has been made succesfully!', 'success')
 
     def __repr__(self):
         return f"User('{self.firstname}','{self.lastname}', '{self.email}','{self.id}')"
 
 
 
-class Products(db.Model):
+class Product(db.Model):
     __tablename__ = "products"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -81,8 +94,8 @@ class Products(db.Model):
     def __repr__(self):
         return f"Products('{self.name}', '{self.price}')"
 
-class Cart(db.Model):
-    __tablename__ = 'cart'
+class Order(db.Model):
+    __tablename__ = 'orders'
     id = db.Column(db.Integer, primary_key=True)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

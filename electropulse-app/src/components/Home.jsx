@@ -57,10 +57,7 @@ const Home  = () => {
 
             {/* viewed cards */}
             <section className="viewed cards">
-                <div className="container">
-                    <h5 className="text-warning">recent view</h5>
-
-                </div>
+                
 
             </section>
 

@@ -1,19 +1,80 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_bcrypt import Bcrypt
+from setup import app, Resource, api, db
+from flask import make_response, jsonify, session, request
+from models import User, Admin, Product, Order
 
-from models import db
+@app.route('/')
+def index():
+    return {"message": "electropulse backend page"}
 
-app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+class UserSignup(Resource):
+    def post(self):
+        userData = request.get_json()
+        name = userData['username']
+        password = userData['password']
+        email = userData['email']
+        contact = userData['contact']
+        address = userData['address']
 
-migrate = Migrate(app, db)
+        new_user = User(name=name, email=email, contact=contact, address=address)
+        new_user.password_hash = password
 
-db.init_app(app)
-bcrypt = Bcrypt(app)
+        db.session.add(new_user)
+        db.session.commit()
+
+        response_data = {"message": "New User Created"}
+
+        return response_data, 201
+api.add_resource(UserSignup, '/usersignup')
+
+class Userlogin(Resource):
+    def post(self):
+        login_data = request.get_json()
+        name = login_data.get('username')
+        password = login_data.get('password')
+
+        if not name or not password:
+            return {"message": "Username and password are required"}, 400
+        
+        user = User.query.filter_by(name=name).first()
+        if not user:
+            return {"message": "User not found"}, 404
+        
+        if not user.validate_password(password):
+            return {"message": "Invalid password"}, 401
+        
+        response_data = {
+            "message": "Login successful",
+            "user_id": user.id
+        }
+
+        return response_data
+api.add_resource(Userlogin, '/userlogin')
+
+class Adminlogin(Resource):
+    def post(self):
+        login_data = request.get_json()
+        name = login_data.get('username')
+        password = login_data.get('password')
+
+        if not name or not password:
+            return {"message": "Username and password are required"}, 400
+        
+        user = Admin.query.filter_by(name=name).first()
+        if not user:
+            return {"message": "User not found"}, 404
+        
+        if not user.validate_password(password):
+            return {"message": "Invalid password"}, 401
+        
+        response_data = {
+            "message": "Login successful",
+            "user_id": user.id
+        }
+
+        return response_data
+api.add_resource(Adminlogin, '/adminlogin')
+
+
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

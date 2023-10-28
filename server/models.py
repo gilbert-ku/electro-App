@@ -1,20 +1,13 @@
-from flask import Flask, flash
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from app import bcrypt
+from setup import db, bcrypt
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship
-# from flask_login import UserMixin
 from datetime import datetime
-from sqlalchemy import MetaData
 
 
-metadata = MetaData(naming_convention={
-    "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-})
-db = SQLAlchemy(metadata=metadata)
+
+
 # class User(db.Model, UserMixin):
 
 

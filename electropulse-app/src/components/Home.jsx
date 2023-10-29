@@ -1,6 +1,7 @@
 import React from 'react';
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
+import CartBuy from './home_comp/CartBuy';
 
 
 const Home  = () => {
@@ -58,7 +59,7 @@ const Home  = () => {
             {/* viewed cards */}
             <section className="viewed cards">
                 
-
+            <CartBuy />
             </section>
 
             {/* cards */}

@@ -50,6 +50,25 @@ class Userlogin(Resource):
         return response_data
 api.add_resource(Userlogin, '/userlogin')
 
+class AdminSignup(Resource):
+    def post(self):
+        userData = request.get_json()
+        name = userData['username']
+        password = userData['password']
+        email = userData['email']
+        contact = userData['contact']
+        address = userData['address']
+
+        new_user = Admin(name=name, email=email, contact=contact, address=address)
+        new_user.password_hash = password
+
+        db.session.add(new_user)
+        db.session.commit()
+
+        response_data = {"message": "New User Created"}
+
+        return response_data, 201
+
 class Adminlogin(Resource):
     def post(self):
         login_data = request.get_json()

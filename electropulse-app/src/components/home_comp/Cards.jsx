@@ -12,7 +12,7 @@ const Cards = () => {
   //   const fetchData = async () => {
   //     const options = {
   //       method: 'GET',
-  //       url: 'https://kohls.p.rapidapi.com/categories/lst',
+  //       url: 'https://kohls.p.rapidapi.com/categories/list',
   //       headers: {
   //         'X-RapidAPI-Key': '7dbd3d40c1msh64e1b5f9d603720p144c39jsn79aa9126d0f2',
   //         'X-RapidAPI-Host': 'kohls.p.rapidapi.com',

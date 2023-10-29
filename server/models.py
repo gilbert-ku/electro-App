@@ -1,4 +1,4 @@
-from setup import db, bcrypt
+from setup import db, bcrypt, flash
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -83,6 +83,7 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=False)
     category = db.Column(db.String(100), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
+    admin_id = db.Column(db.Integer, db.ForeignKey('admin.id'))
 
     def __repr__(self):
         return f"Products('{self.name}', '{self.price}')"
@@ -92,7 +93,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user = relationship("User", back_populates="cart")
+    user = relationship("User", back_populates="order")
     quantity = db.Column(db.Integer, nullable=False, default=1)
     review = db.Column(db.String(200))
 

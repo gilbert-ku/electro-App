@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -14,6 +13,7 @@ const Cards = () => {
         method: 'GET',
         url: 'https://kohls.p.rapidapi.com/categories/list',
         headers: {
+          // new api-key
           'X-RapidAPI-Key': '7dbd3d40c1msh64e1b5f9d603720p144c39jsn79aa9126d0f2',
           'X-RapidAPI-Host': 'kohls.p.rapidapi.com',
         },
@@ -44,6 +44,8 @@ const Cards = () => {
 
 return (
   <>
+
+  
     <div className="container">
       <h5 className="text-warning">last viewed</h5>
       {/* Render the selected cards in a separate div */}
@@ -56,6 +58,8 @@ return (
           </div>
         ))}
       </div>
+
+      
 
       <div className="container">
         {/* handles error message */}

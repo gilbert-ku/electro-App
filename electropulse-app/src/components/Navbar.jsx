@@ -13,7 +13,7 @@ function Navbar() {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        
+
       </div>
       <div className="container">
 
@@ -43,28 +43,22 @@ function Navbar() {
             </button>
           </form>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
+            <ul className="navbar-nav">
 
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <FaUser/> account
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <Link to="/account" className="nav-link">
-                    <FaUser />
-                  </Link>
-              </ul>
-            </li>
-            <li className='nav-item'>
-              <a id="login-button" className='nav-link' href='/login'>Login</a>
-            </li>
-            <li className='nav-item'>
-              <a id="signup-button" className='nav-link' href='/signup'>Signup</a>
-            </li>
-          </ul>
-        </div>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <FaUser /> account
+                </a>
+                <ul id="auth-button" className="dropdown-menu text-center justify-content-center" aria-labelledby="navbarDropdownMenuLink">
+                  <a id="login-button" className='nav-link' href='/login'>Login</a>
+                  <a id="signup-button" className='nav-link' href='/signup'>Signup</a>
+                </ul>
+              </li>
+             
+            </ul>
+          </div>
           <ul className="navbar-nav ml-auto">
-           
+
             <li className="nav-item">
               <Link to="/cart" className="nav-link" id="cart-button">
                 <FaShoppingCart /> Cart

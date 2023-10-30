@@ -6,6 +6,7 @@ import Image from '../assets/image/background.jpeg';
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
 import CartBuy from './home_comp/CartBuy';
+import {FaWallet, FaQuestionCircle} from 'react-icons/fa';
 
 const Home = () => {
 
@@ -18,18 +19,18 @@ const Home = () => {
 
             {/* home - body */}
             <section className="home-page">
-                <div className='hero'>
-                    <div className='hero-img'>
+                <div className='hero d-flex justify-content-around'>
+                    <div className='hero-img text-center'>
                         <img src={Image} alt='' id='hero-img' />
                     </div>
-                    {/* <div className="container title" id='hero-text'>
-                        <h1 className="f-s-1 text-center opacity-100 ">Electro<span className="text-white">Pulse</span></h1>
-
-                    </div> */}
-                    <div className="hero-links text-center mt-4">
-                        <a href="/sell" className="btn btn-primary btn-lg me-2">Sell on ElectroPulse</a>
-                        <a href="/help" className="btn btn-secondary btn-lg">Help Center</a>
+                   
+                    <div className="hero-links text-center mt-1.5 bg-light">
+                        <div className="d-flex flex-column  links">
+                            <a id='links-a' href="/sell" className="btn btn-warning  mb-2"><FaWallet/> Sell on ElectroPulse</a>
+                            <a id='links-b' href="/help" className="btn btn-outline-secondary "><FaQuestionCircle/> Help Center</a>
+                        </div>
                     </div>
+
                 </div>
             </section>
 

@@ -3,14 +3,17 @@ import { Link } from "react-router-dom"; // You can adjust the routing as needed
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa"; // You may need to install the "react-icons" library
 
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          <span className="shop-icon">electro<span>Pulse</span></span>
+          <p className="shop-icon">electro<span>Pulse</span></p>
         </Link>
-       
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
       </div>
       <div className="container">
 
@@ -32,7 +35,7 @@ function Navbar() {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="search products and categories"
+              placeholder="search products and category"
               aria-label="Search"
             />
             <button id="search-button" className="btn btn-outline-success" type="submit">

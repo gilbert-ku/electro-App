@@ -199,7 +199,32 @@ body {
   background-color: #f49f0a;
   color: white;
 }
-#navbarNavDropdown{
+#navbarNavDropdown {
   margin-left: 4.2cm;
-
+}
+#custom-button {
+  background-color: orange;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+#custom-button:hover {
+  color: white;
+}
+#news-form {
+  border-radius: 5px;
+}
+.custom-section {
+  background-color: black;
+  color: white;
+}
+.custom-section .shop-icon{
+  color: white;
+}
+.custom-logo{
+  margin-top: 3.5rem;
+  font-size: x-large;
 }

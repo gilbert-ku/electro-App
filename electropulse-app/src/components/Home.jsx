@@ -1,4 +1,31 @@
 import React from 'react';
+import Cards from './Cards';
+import Navbar from '../components/Navbar';
+import Newsletter from '../components/Newsletter';
+import Footer from '../components/Footer';
+
+
+
+// import Navbar from './Navbar'
+
+// import axios from 'axios';
+
+// const options = {
+//   method: 'GET',
+//   url: 'https://kohls.p.rapidapi.com/categories/list',
+//   headers: {
+//     'X-RapidAPI-Key': 'c355c9c215msh4ab47fb85d1669fp139939jsnbb46094711c3',
+//     'X-RapidAPI-Host': 'kohls.p.rapidapi.com'
+//   }
+// };
+
+// try {
+//   const response = await axios.request(options);
+//   console.log(response.data);
+// } catch (error) {
+//   console.error(error);
+// }
+
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
 import CartBuy from './home_comp/CartBuy';
@@ -38,6 +65,8 @@ const Home = () => {
                 <Cards />
             </section>
 
+            <Newsletter/>
+            <Footer/>
         </>
     )
 }

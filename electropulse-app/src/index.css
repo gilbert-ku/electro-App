@@ -229,6 +229,7 @@ body {
 .custom-section {
   background-color: black;
   color: white;
+  height: 30vh;
 }
 .custom-section .shop-icon{
   color: white;
@@ -242,5 +243,8 @@ body {
   width: 200px;
   height: 200px;
 
+}
+#custom-section{
+  padding-top: 2rem;
 }
 

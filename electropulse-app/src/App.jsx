@@ -4,7 +4,6 @@ import Home from '../src/components/Home'
 import Login from '../src/components/login';
 import Signup from '../src/components/signup';
 import Footer from '../src/components/Footer';
-import Navbar from './components/Navbar';
 
 
 
@@ -14,7 +13,6 @@ const App = () => {
 
   return (
     <div>
-      <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />

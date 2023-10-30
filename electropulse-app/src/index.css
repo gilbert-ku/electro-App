@@ -93,3 +93,58 @@ body {
   margin-left: 5px;
   cursor: pointer;
 }
+.navbar {
+  background-color: #007BFF; 
+}
+
+.navbar-brand {
+  color: #fff; 
+  font-size: 24px; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: black; 
+  font-weight: bold; 
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #0056b3;
+  border-radius: 4px; 
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px; 
+}
+
+.btn-outline-success {
+  color: #007BFF; 
+  border-color: #007BFF;
+}
+
+
+.footer {
+  background-color: #333; /* Change the background color of the footer */
+  color: black; /* Change the text color */
+  padding: 20px 0; /* Add some padding for spacing */
+  text-align: center;
+}
+
+/* Additional Styles */
+.shop-icon {
+  color: black; /* Change the text color of the shop icon */
+  font-size: 24px; /* Adjust the font size */
+  font-weight: bold; /* Adjust the font weight */
+}
+
+/* Adjust the color of the icons inside the nav links */
+.nav-link .svg-inline--fa {
+  color: black; /* Change the icon color */
+  font-size: 20px; /* Adjust the icon size */
+}

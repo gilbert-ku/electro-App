@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './Cards';
+// import Cards from './Cards';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
@@ -134,7 +134,7 @@ const Home = () => {
 
             {/* cards */}
             <section className="cards">
-                <Cards />
+                {/* <Cards /> */}
             </section>
 
             <Newsletter/>

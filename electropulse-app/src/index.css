@@ -40,15 +40,15 @@ body {
 }
 
 .signup-page {
-.login-page{
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding-top: 6rem;
-  /* background-color: black; */
-}
+  .login-page {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
+    /* background-color: black; */
+  }
 }
 .login-page {
   height: 100vh;
@@ -172,6 +172,10 @@ body {
   color: black;
   padding: 20px 0; /* Add some padding for spacing */
   text-align: center;
+  height: 50vh;
+}
+.footer-bottom {
+  margin-top: 90px;
 }
 
 /* Additional Styles */
@@ -224,19 +228,55 @@ body {
   color: white;
   height: 30vh;
 }
-.custom-section .shop-icon{
+.custom-section .shop-icon {
   color: white;
 }
-.custom-logo{
+.custom-logo {
   margin-top: 3.5rem;
   font-size: x-large;
 }
 
-#selected-cards{
+#selected-cards {
   width: 200px;
   height: 200px;
+}
+#custom-section {
+  padding-top: 2rem;
+}
+.social-icons .icons {
+  font-size: 25px;
+  margin-right: 20px;
+  justify-content: space-around;
+  color: orange;
+  transition: all 0.4s ease;
+}
+.icons:hover {
+  color: white;
+}
+.line-space {
+  color: #f49f0a;
+  background-color: orange;
+  height: 2px;
+  margin-top: 20px;
+}
+.help-icons{
+  margin-top: 20px;
+  
+}
+#help-icons {
+  color: orange;
+  text-decoration: none;
+  transition: all 0.9s ease;
 
 }
-#custom-section{
-  padding-top: 2rem;
+#help-icons:hover {
+  text-decoration: underline;
+  
+}
+.button-sell{
+  margin-left: 140px;
+  
+}
+.button-sell:hover{
+  color: white;
 }

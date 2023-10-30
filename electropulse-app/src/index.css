@@ -6,11 +6,11 @@
 }
 
 body {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   overflow-x: hidden;
 }
 
-.home-page{
+.home-page {
   /* background-color: orange; */
   width: 100vw;
   height: 100vh;
@@ -20,22 +20,18 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 50vh;
-  
-  
-} 
+}
 .title {
   justify-content: center;
   align-content: center;
   align-items: center;
-  
 }
-.title h1{
+.title h1 {
   opacity: 200%;
   font-size: 300%;
   font-size: 900;
   padding-top: 25%;
-  color: #F49F0A;
-  
+  color: #f49f0a;
 }
 
 #cards {
@@ -43,6 +39,7 @@ body {
   height: 200px;
 }
 
+.signup-page {
 .login-page{
   height: 100vh;
   width: 100vw;
@@ -51,8 +48,8 @@ body {
   align-items: center;
   padding-top: 6rem;
   /* background-color: black; */
-} 
-.signup-page{
+}
+.login-page {
   height: 100vh;
   width: 100vw;
   text-align: center;
@@ -60,47 +57,86 @@ body {
   align-items: center;
   padding-top: 6rem;
   /* background-color: black; */
-} 
-#login-button{
+}
+#auth-button {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#login-button {
+  /* background-color: orange; */
+  color: black;
+  border-color: black;
+  text-align: center;
+  width: 100px;
+}
+
+#login-button:hover {
+  color: orange;
+  background-color: white;
+  outline-color: #333;
+}
+#login1-button {
+  /* background-color: orange; */
+  color: orange;
+  border-color: orange;
+  text-align: center;
+  width: 100px;
+}
+#login1-button:hover {
+  color: white;
+  background-color: orange;
+  outline-color: #333;
+}
+#signup-button {
   background-color: orange;
   color: black;
   border-color: black;
+  border-radius: 5px;
+  padding-left: 5px;
+  width: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-#login-button:hover{
+#signup-button:hover {
   color: white;
 }
-#signup-button{
+#signup1-button {
+  color: orange;
+  border-color: orange;
+  text-align: center;
+  width: 100px;
+}
+#signup1-button:hover {
+  color: white;
   background-color: orange;
-  color: black;
-  border-color: black;
+  outline-color: #333;
 }
-#signup-button:hover{
-  color: white;
-}
-.card{
+.card {
   width: 400px;
   height: 60vh;
 }
-.custom-card{
-  border-color: 2px solid orange
+.custom-card {
+  border-color: 2px solid orange;
 }
-.greet{
+.greet {
   font-weight: bold;
   font-size: large;
 }
-.signup-link{
+.signup-link {
   color: orange;
   text-decoration: none;
   margin-left: 5px;
   cursor: pointer;
 }
 .navbar {
-  background-color: #007BFF; 
+  background-color: #007bff;
 }
 
 .navbar-brand {
-  color: #fff; 
-  font-size: 24px; 
+  color: #fff;
+  font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -110,29 +146,29 @@ body {
 }
 
 .navbar-nav .nav-link {
-  color: black; 
-  font-weight: bold; 
+  color: black;
+  font-weight: bold;
+  margin-right: 20px;
 }
 
 .navbar-nav .nav-link:hover {
-  background-color: #0056b3;
-  border-radius: 4px; 
+  background-color: rgb(237, 237, 237);
+  border-radius: 4px;
 }
 
 .form-control {
   border: 1px solid #ced4da;
-  border-radius: 4px; 
+  border-radius: 4px;
 }
 
 .btn-outline-success {
-  color: #007BFF; 
-  border-color: #007BFF;
+  color: orange;
+  border-color: orange;
 }
 
-
 .footer {
-  background-color: #333; /* Change the background color of the footer */
-  color: black; /* Change the text color */
+  background-color: #333;
+  color: black;
   padding: 20px 0; /* Add some padding for spacing */
   text-align: center;
 }
@@ -143,11 +179,55 @@ body {
   font-size: 24px; /* Adjust the font size */
   font-weight: bold; /* Adjust the font weight */
 }
+.shop-icon span {
+  color: orange;
+}
 
 /* Adjust the color of the icons inside the nav links */
 .nav-link .svg-inline--fa {
   color: black; /* Change the icon color */
   font-size: 20px; /* Adjust the icon size */
+}
+#cart:hover {
+  color: white;
+  background-color: #ced4da;
+}
+#search-button {
+  color: #f49f0a;
+  border-color: orange;
+}
+#search-button:hover {
+  background-color: #f49f0a;
+  color: white;
+}
+#navbarNavDropdown {
+  margin-left: 4.2cm;
+}
+#custom-button {
+  background-color: orange;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+#custom-button:hover {
+  color: white;
+}
+#news-form {
+  border-radius: 5px;
+}
+.custom-section {
+  background-color: black;
+  color: white;
+}
+.custom-section .shop-icon{
+  color: white;
+}
+.custom-logo{
+  margin-top: 3.5rem;
+  font-size: x-large;
 }
 
 #selected-cards{

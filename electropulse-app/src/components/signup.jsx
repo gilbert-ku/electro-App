@@ -24,7 +24,7 @@ const Signup = () => {
                             <div className="form-group mb-3">
                                 <input type="password" className="form-control" id="confirm-password" placeholder="Confirm Password" />
                             </div>
-                            <button type="button" className="btn btn-outline-primary" id="signup-button">Sign Up</button>
+                            <button type="button" className="btn btn-outline-primary" id="signup1-button">Sign Up</button>
                             <div className="d-flex justify-content-center mt-3">
                                 <p>Already have an account? <a className="signup-link" href="/login">Login</a></p>
                             </div>

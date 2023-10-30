@@ -1,5 +1,7 @@
 import React from 'react';
 import Cards from './Cards';
+import Navbar from '../components/Navbar';
+
 // import Navbar from './Navbar'
 
 // import axios from 'axios';
@@ -25,8 +27,9 @@ import Cards from './Cards';
 const Home = () => {
     return (
         <>
-          
-            
+            <Navbar />
+
+
             {/* home - body */}
             <section className="home-page opacity-100">
                 <div className="container title">

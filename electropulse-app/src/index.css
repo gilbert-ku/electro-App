@@ -72,9 +72,22 @@ body {
   text-align: center;
   width: 100px;
 }
+
 #login-button:hover{
   color: orange;
   background-color: white;
+  outline-color: #333;
+}
+#login1-button{
+  /* background-color: orange; */
+  color: orange;
+  border-color: orange;
+  text-align: center;
+  width: 100px;
+}
+#login1-button:hover{
+  color: white;
+  background-color: orange;
   outline-color: #333;
 }
 #signup-button{
@@ -90,6 +103,17 @@ body {
 }
 #signup-button:hover{
   color: white;
+}
+#signup1-button{
+   color: orange;
+  border-color: orange;
+  text-align: center;
+  width: 100px;
+}
+#signup1-button:hover{
+  color: white;
+  background-color: orange;
+  outline-color: #333;
 }
 .card{
   width: 400px;

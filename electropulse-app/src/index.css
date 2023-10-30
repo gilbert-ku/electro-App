@@ -181,6 +181,9 @@ body {
   font-size: 24px; /* Adjust the font size */
   font-weight: bold; /* Adjust the font weight */
 }
+.shop-icon span{
+  color: orange;
+}
 
 /* Adjust the color of the icons inside the nav links */
 .nav-link .svg-inline--fa {

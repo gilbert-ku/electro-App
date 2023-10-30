@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; // You can adjust the routing as needed
-import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa"; // You may need to install the "react-icons" library
-import "./styles.css"; 
+// import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa"; // You may need to install the "react-icons" library
+// import "./styles.css"; 
 
 function Navbar() {
   return (

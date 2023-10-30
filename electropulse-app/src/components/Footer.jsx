@@ -1,6 +1,6 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa"; // You may need to install the "react-icons" library
-import "./styles.css"; 
+// import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa"; // You may need to install the "react-icons" library
+// import "./styles.css"; 
 
 function Footer() {
   return (

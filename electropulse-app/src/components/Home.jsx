@@ -2,12 +2,17 @@ import React from 'react';
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
 import CartBuy from './home_comp/CartBuy';
+import Navbar from './Navbar';
 
 
-const Home  = () => {
+const Home = () => {
     return (
+
         <>
-        
+        {/*  */}
+            <Navbar />
+
+
             {/* home - body */}
             <section className="home-page opacity-100">
                 <div className="container title">
@@ -32,8 +37,8 @@ const Home  = () => {
             <section className="cards">
                 <Cards />
             </section>
-            
+
         </>
     )
 }
-export default Home
+export default Home;

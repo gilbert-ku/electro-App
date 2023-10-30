@@ -138,6 +138,61 @@ class ProductsByID(Resource):
 
 api.add_resource(ProductsByID, '/products/<int:id>')
 
+class Orders(Resource):
+    def post(self):
+        order_data = request.get_json()
+        product_id = order_data.get('product_id')
+        user_id = order_data.get('user_id')
+        quantity = order_data.get('quantity')
+        review = order_data.get('review')
+
+        if not product_id or not user_id or not quantity:
+            return {"error": "Missing order information"}, 400
+
+        # Check if the provided product and user IDs exist
+        product = Product.query.get(product_id)
+        user = User.query.get(user_id)
+
+        if not product or not user:
+            return {"error": "Product or user not found"}, 404
+
+        # Create a new Order instance and set its attributes
+        new_order = Order(
+            product_id=product_id,
+            user_id=user_id,
+            quantity=quantity,
+            review=review
+        )
+
+        db.session.add(new_order)
+        db.session.commit()
+
+        response_data = {"message": "New order created", "order_id": new_order.id}
+
+        return response_data, 201
+
+api.add_resource(Orders, '/orders')
+
+class ClientAddressUpdate(Resource):
+    def patch(self, id):
+        new_address = request.get_json().get('address')
+
+        if not new_address:
+            return {"error": "Missing address information"}, 400
+
+        user = User.query.get(id)
+
+        if not user:
+            return {"error": "User not found"}, 404
+
+        user.address = new_address
+        db.session.commit()
+
+        response_data = {"message": "Client's address updated"}
+
+        return response_data, 200
+
+api.add_resource(ClientAddressUpdate, '/address/<int:user_id>')
 
 
 class AdminSignup(Resource):

@@ -11,6 +11,9 @@ flask-sqlalchemy = "*"
 flask-restful = "*"
 flask-cors = "*"
 flask-migrate = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+faker = "*"
 
 [dev-packages]
 

@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          <p className="shop-icon">electro<span>Pulse</span></p>
+          <span className="shop-icon">electro<span>Pulse</span></span>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@ function Navbar() {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="search products and categories"
               aria-label="Search"
             />
             <button id="search-button" className="btn btn-outline-success" type="submit">

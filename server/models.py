@@ -19,7 +19,7 @@ class Admin(db.Model, SerializerMixin):
     contact = db.Column(db.String)
     address = db.Column(db.String(120), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    products = db.relationship('Products', backref='admin', lazy=True)
+    products = db.relationship('Product', backref='admin', lazy=True)
     _password_hash = db.Column(db.String(60), nullable=False)
 
     @hybrid_property
@@ -93,7 +93,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user = relationship("User", back_populates="order")
+
     quantity = db.Column(db.Integer, nullable=False, default=1)
     review = db.Column(db.String(200))
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Cards from './Cards';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
@@ -29,8 +28,6 @@ import Footer from '../components/Footer';
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
 import CartBuy from './home_comp/CartBuy';
-import Navbar from './Navbar';
-
 
 const Home = () => {
     return (

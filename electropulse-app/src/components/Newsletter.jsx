@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Newsletter = () => {
     return (
-        <section className=" mt-4 custom-section">
-            <div className="container-fluid d-flex justify-content-around">
+        <section className="mt-4 custom-section">
+            <div className="container-fluid d-flex justify-content-around" id="custom-section">
                 <div className="custom-logo">
                     <Link to="/" className="navbar-brand">
                         <span className="shop-icon">electro<span>Pulse</span></span>

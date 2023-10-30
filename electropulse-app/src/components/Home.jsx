@@ -1,6 +1,10 @@
 import React from 'react';
 import Cards from './Cards';
 import Navbar from '../components/Navbar';
+import Newsletter from '../components/Newsletter';
+import Footer from '../components/Footer';
+
+
 
 // import Navbar from './Navbar'
 
@@ -133,6 +137,8 @@ const Home = () => {
                 <Cards />
             </section>
 
+            <Newsletter/>
+            <Footer/>
         </>
     )
 }

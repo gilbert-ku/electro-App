@@ -4,6 +4,7 @@ import Home from '../src/components/Home'
 import Login from '../src/components/login';
 import Signup from '../src/components/signup';
 import Footer from '../src/components/Footer';
+import Newsletter from '../src/components/Newsletter';
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
         {/* <Route path="/Navbar" element={<Navbar/>} /> */}
         {/* <Route path="/Footer" element={<Footer/>} /> */}
       </Routes>
+      <Newsletter/>
       <Footer/>
     </div>
 

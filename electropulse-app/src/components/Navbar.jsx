@@ -3,42 +3,31 @@ import { Link } from "react-router-dom"; // You can adjust the routing as needed
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa"; // You may need to install the "react-icons" library
 
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div className="logo">
         <Link to="/" className="navbar-brand">
-          <span className="shop-icon">electro<span>Pulse</span></span>
+          <p className="shop-icon">electro<span>Pulse</span></p>
         </Link>
-       
+
+
       </div>
-      <div className="container">
+      <div className="nav-details">
 
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <form className="d-flex">
             <input
-              className="form-control me-2"
+              className="form-control me-4"
               type="search"
-              placeholder="search products and categories"
+              placeholder="search products and category"
               aria-label="Search"
             />
             <button id="search-button" className="btn btn-outline-success" type="submit">
               <FaSearch />
             </button>
           </form>
+          
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
 
@@ -51,7 +40,7 @@ function Navbar() {
                   <a id="signup-button" className='nav-link' href='/signup'>Signup</a>
                 </ul>
               </li>
-             
+
             </ul>
           </div>
           <ul className="navbar-nav ml-auto">

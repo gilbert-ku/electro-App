@@ -2,47 +2,40 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
-
-
-
-// import Navbar from './Navbar'
-
-// import axios from 'axios';
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://kohls.p.rapidapi.com/categories/list',
-//   headers: {
-//     'X-RapidAPI-Key': 'c355c9c215msh4ab47fb85d1669fp139939jsnbb46094711c3',
-//     'X-RapidAPI-Host': 'kohls.p.rapidapi.com'
-//   }
-// };
-
-// try {
-//   const response = await axios.request(options);
-//   console.log(response.data);
-// } catch (error) {
-//   console.error(error);
-// }
-
+import Image from '../assets/image/background.jpeg';
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
 import CartBuy from './home_comp/CartBuy';
+import { FaWallet, FaQuestionCircle } from 'react-icons/fa';
+
+
 
 const Home = () => {
+
     return (
 
         <>
-        {/*  */}
+            {/*  */}
             <Navbar />
 
 
             {/* home - body */}
-            <section className="home-page opacity-100">
-                <div className="container title">
-                    <h1 className="f-s-1 text-center opacity-100 ">Electro<span className="text-white">Pulse</span></h1>
-                    
+            <section className="home-page">
+
+                <div id="carouselExampleSlidesOnly" className="carousel slide text-center" data-bs-ride="carousel" data-interval="100">
+                    <div className="carousel-inner justify-content-center">
+                        <div className="carousel-item active">
+                            <img src={Image} className="" alt="first slide" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src={Image} className="" alt="second slide" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src={Image} className="" alt="third slide" />
+                        </div>
+                    </div>
                 </div>
+
             </section>
 
 
@@ -53,8 +46,8 @@ const Home = () => {
 
             {/* viewed cards */}
             <section className="viewed cards">
-                
-            <CartBuy />
+
+                <CartBuy />
             </section>
 
             {/* cards */}
@@ -62,8 +55,8 @@ const Home = () => {
                 <Cards />
             </section>
 
-            <Newsletter/>
-            <Footer/>
+            <Newsletter />
+            <Footer />
         </>
     )
 }

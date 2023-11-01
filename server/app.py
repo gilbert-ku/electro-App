@@ -1,5 +1,5 @@
 from setup import app, Resource, api, db
-from flask import make_response, jsonify, session, request
+from flask import make_response, jsonify, request
 from models import User, Admin, Product, Order
 
 @app.route('/')
@@ -70,6 +70,8 @@ class Products(Resource):
         price = product_data.get('price')
         description = product_data.get('description')
         category = product_data.get('category')
+        brand = product_data.get('brand')
+        # image_url = product_data.get('image_url')
         quantity = product_data.get('quantity')
         admin_id = product_data.get('admin_id')
 
@@ -81,6 +83,8 @@ class Products(Resource):
             price=price,
             description=description,
             category=category,
+            brand=brand,
+            # image_url=image_url,
             quantity=quantity,
             admin_id=admin_id
         )

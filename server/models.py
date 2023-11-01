@@ -14,13 +14,13 @@ from datetime import datetime
 class Admin(db.Model, SerializerMixin):
     __tablename__ = "admin"    
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), unique=False, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    name = db.Column(db.String, unique=False, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
     contact = db.Column(db.String)
-    address = db.Column(db.String(120), nullable=True)
+    address = db.Column(db.String, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     products = db.relationship('Product', backref='admin', lazy=True)
-    _password_hash = db.Column(db.String(60), nullable=False)
+    _password_hash = db.Column(db.String, nullable=False)
 
     @hybrid_property
     def password_hash(self):
@@ -43,14 +43,14 @@ class Admin(db.Model, SerializerMixin):
 class User(db.Model):
     __tablename__ = "user"    
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), unique=False, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    name = db.Column(db.String, unique=False, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
     contact = db.Column(db.String)
     
-    address = db.Column(db.String(120), nullable=True)
+    address = db.Column(db.String, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     order = db.relationship('Order', backref='user', lazy=True)
-    _password_hash = db.Column(db.String(60), nullable=False)
+    _password_hash = db.Column(db.String, nullable=False)
     @hybrid_property
     def password_hash(self):
         return{"message": "You can't view password hashes"}
@@ -78,10 +78,12 @@ class User(db.Model):
 class Product(db.Model):
     __tablename__ = "products"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.Text, nullable=False)
-    category = db.Column(db.String(100), nullable=False)
+    category = db.Column(db.String, nullable=False)
+    brand = db.Column(db.String, nullable=False)
+    image_url = db.Column(db.String)
     quantity = db.Column(db.Integer, nullable=False)
     admin_id = db.Column(db.Integer, db.ForeignKey('admin.id'))
 

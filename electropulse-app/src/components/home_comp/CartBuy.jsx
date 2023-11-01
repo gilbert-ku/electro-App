@@ -16,7 +16,7 @@ const CartBuy = () => {
     const handleIncrement = () => {
         setQuantity(quantity + 1)
         setShowAlert(false)
-        setAmount((prevAmount) => prevAmount  + amount);
+        setAmount((prevAmount) => prevAmount * quantity );
 
     };
   

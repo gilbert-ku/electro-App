@@ -71,7 +71,7 @@ class Products(Resource):
         description = product_data.get('description')
         category = product_data.get('category')
         brand = product_data.get('brand')
-        # image_url = product_data.get('image_url')
+        image_url = product_data.get('image_url')
         quantity = product_data.get('quantity')
         admin_id = product_data.get('admin_id')
 
@@ -84,7 +84,7 @@ class Products(Resource):
             description=description,
             category=category,
             brand=brand,
-            # image_url=image_url,
+            image_url=image_url,
             quantity=quantity,
             admin_id=admin_id
         )

@@ -83,7 +83,7 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=False)
     category = db.Column(db.String, nullable=False)
     brand = db.Column(db.String, nullable=False)
-    image_url = db.Column(db.String)
+    image_url = db.Column(db.String, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     admin_id = db.Column(db.Integer, db.ForeignKey('admin.id'))
 

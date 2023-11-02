@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import backgroundImg from '../../assets/image/background.jpeg';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 const Cards = () => {
@@ -35,13 +37,13 @@ const Cards = () => {
     <>
       <div className='container'>
         <div className='container  w-100 h-50'>
-          <h1 className='bg-warning'>Recently Viewed</h1>
-          <div className='container'>
-            <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+          <h1 className='bg-warning rounded-top p-2'>Recently Viewed</h1>
+          <div className='container' >
+            <div className="row row-cols-1 row-cols-lg-4  g-lg-4">
               
               {data && data.map((d) => (
-                <div className="col p-2">
-                  <div className="card border border-warning" style={{ width: '18rem', height: "30rem"}} >
+                <div className="col">
+                  <div className="card border border-warning shadow p-3 mb-5 bg-body rounded " style={{ width: '18rem', height: "30rem"}} >
                   {/* <img src={backgroundImg} className="card-img-top" alt="..." /> */}
                     <img src={d.image_url} className="card-img-top" alt="..." />
                     <div className="card-body">
@@ -64,5 +66,4 @@ const Cards = () => {
   );
 }  
 export default Cards;
-
 

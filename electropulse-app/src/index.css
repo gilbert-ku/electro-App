@@ -331,3 +331,8 @@ body {
 .form {
   margin-right: 3rem;
 }
+.form-control-login{
+  width: 40vh;
+  border-radius: 4px;
+  border: 1px solid orange;
+}

@@ -1,10 +1,11 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa"; // You may need to install the "react-icons" library
-
+import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube, FaCcPaypal } from "react-icons/fa";
+import { Link } from "react-router-dom";
+// import {Mpesa} from '../assets/image/mpesa.ico';
 
 function Footer() {
   return (
-    
+
     <footer className="footer bg-dark contain" >
       <div className="container text-start">
         <div className="row">
@@ -12,10 +13,10 @@ function Footer() {
             <h5>Need Help?</h5>
             <ul className="list-unstyled help-icons">
               <li className="help-icons">
-                <a id="help-icons" href='#'>Help Center</a>
+                <a id="help-icons" href='/help-centre'>Help Center</a>
               </li>
               <li className="help-icons">
-                <a id="help-icons" href='#'>Contact Us</a>
+                <a id="help-icons" href='/contact-us'>Contact Us</a>
               </li>
             </ul>
           </div>
@@ -23,7 +24,7 @@ function Footer() {
             <h5>About</h5>
             <ul className="list-unstyled help-icons">
               <li className="help-icons">
-                <a id="help-icons" href='#'>About us</a>
+                <a id="help-icons" href='/about-us'>About us</a>
               </li>
               <li className="help-icons">
                 <a id="help-icons" href='#'>Terms & conditions</a>
@@ -33,6 +34,9 @@ function Footer() {
           <div className="col-lg-3 col-md-12">
             <h5>Payment methods</h5>
             {/* here insert mpesa logo and paypal logo */}
+            <a className="pay-icons" href="#">
+              <FaCcPaypal className="larger-icon" />
+            </a>
 
           </div>
         </div>
@@ -54,7 +58,9 @@ function Footer() {
                 <a className="icons" href="#">
                   <FaYoutube className="larger-icon" />
                 </a>
-                <button className="btn btn-warning button-sell">Sell on Electro<span>Pulse</span></button>
+                <Link to="/sell-on-electropulse" className="btn btn-warning button-sell">
+                  Sell on Electro<span>Pulse</span>
+                </Link>
               </div>
             </div>
           </div>

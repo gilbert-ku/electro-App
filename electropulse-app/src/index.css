@@ -330,4 +330,12 @@ body {
 .form-control1 {
   border: 1px solid orange;
   border-radius: 4px;
+.pay-icons {
+  font-size: 45px;
+  color: orange;
+  transition: all 0.4s ease;
+  
+}
+.pay-icons:hover {
+  color: white;
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa"; // You may need to install the "react-icons" library
-
+import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube,FaCcPaypal } from "react-icons/fa"; // You may need to install the "react-icons" library
+// import {Mpesa} from '../assets/image/mpesa.ico';
 
 function Footer() {
   return (
@@ -11,10 +11,10 @@ function Footer() {
             <h5>Need Help?</h5>
             <ul className="list-unstyled help-icons">
               <li className="help-icons">
-                <a id="help-icons" href='#'>Help Center</a>
+                <a id="help-icons" href='/help-centre'>Help Center</a>
               </li>
               <li className="help-icons">
-                <a id="help-icons" href='#'>Contact Us</a>
+                <a id="help-icons" href='/contact-us'>Contact Us</a>
               </li>
             </ul>
           </div>
@@ -22,7 +22,7 @@ function Footer() {
             <h5>About</h5>
             <ul className="list-unstyled help-icons">
               <li className="help-icons">
-                <a id="help-icons" href='#'>About us</a>
+                <a id="help-icons" href='/about-us'>About us</a>
               </li>
               <li className="help-icons">
                 <a id="help-icons" href='#'>Terms & conditions</a>
@@ -32,7 +32,10 @@ function Footer() {
           <div className="col-lg-3 col-md-12">
             <h5>Payment methods</h5>
             {/* here insert mpesa logo and paypal logo */}
-
+            <a className="pay-icons" href="#"> 
+            <FaCcPaypal className="larger-icon"/> 
+            </a> 
+            
           </div>
         </div>
       </div>

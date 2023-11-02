@@ -1,6 +1,6 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa"; // You may need to install the "react-icons" library
-
+import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube,FaCcPaypal } from "react-icons/fa"; // You may need to install the "react-icons" library
+// import {Mpesa} from '../assets/image/mpesa.ico';
 
 function Footer() {
   return (
@@ -32,7 +32,10 @@ function Footer() {
           <div className="col-lg-3 col-md-12">
             <h5>Payment methods</h5>
             {/* here insert mpesa logo and paypal logo */}
-
+            <a className="pay-icons" href="#"> 
+            <FaCcPaypal className="larger-icon"/> 
+            </a> 
+            
           </div>
         </div>
       </div>

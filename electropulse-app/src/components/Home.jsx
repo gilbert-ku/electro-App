@@ -48,7 +48,7 @@ const Home = () => {
             {/* viewed cards */}
             <section className="viewed cards">
 
-                <CartBuy />
+                {/* <CartBuy /> */}
             </section>
 
             {/* cards */}

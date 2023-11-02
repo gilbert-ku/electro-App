@@ -4,6 +4,11 @@ import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
+  const loggedInUser = localStorage.getItem('loggedInUser')
+
+  const handleLogout = () => { 
+    localStorage.removeItem('loggedInUser');
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="logo">
@@ -33,11 +38,19 @@ const Navbar = () => {
 
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <FaUser /> account
+                  <FaUser /> {loggedInUser ? `Hi, ${loggedInUser}` : 'Account'}
                 </a>
                 <ul id="auth-button" className="dropdown-menu text-center justify-content-center" aria-labelledby="navbarDropdownMenuLink">
-                  <a id="login-button" className='nav-link' href='/login'>Login</a>
-                  <a id="signup-button" className='nav-link' href='/signup'>Signup</a>
+                  {loggedInUser ? (
+                    <>
+                      <a id="logout-button" className='nav-link' href='/' onClick={handleLogout}>Logout</a>
+                    </>
+                  ) : (
+                    <>
+                      <a id="login-button" className='nav-link' href='/login'>Login</a>
+                      <a id="signup-button" className='nav-link' href='/signup'>Signup</a>
+                    </>
+                  )}
                 </ul>
               </li>
 

@@ -19,6 +19,7 @@ const Login = () => {
         })
             .then((response) => {
                 if (response.ok) {
+                    localStorage.setItem('loggedInUser', username)
                     window.location.href =  '/';
                 } else {
                     setError('Please input valid login credentials');

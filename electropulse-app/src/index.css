@@ -339,3 +339,7 @@ body {
 .pay-icons:hover {
   color: white;
 }
+.form-control-login {
+  border: 1px solid orange;
+  border-radius: 4px;
+}

@@ -327,6 +327,9 @@ body {
 .form {
   margin-right: 3rem;
 }
+.form-control1 {
+  border: 1px solid orange;
+  border-radius: 4px;
 .pay-icons {
   font-size: 45px;
   color: orange;

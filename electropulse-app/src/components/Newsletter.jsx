@@ -31,9 +31,9 @@ const Newsletter = () => {
                 <div>
                     <p className="h4">New to ElectroPulse?</p>
                     <p>Subscribe to our newsletter to get updates on our latest offers!</p>
-                    <form className="mt-3 mb-3" onSubmit={handleSubmit}>
+                    <form className="mt-3 mb-3 " onSubmit={handleSubmit}>
                         <div className="input-group">
-                            <input type="email" className="form-control" id="news-form" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)}/>
+                            <input type="email" className="form-control1" id="news-form" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)}/>
                             <button id="custom-button" className="btn btn-warning" type="submit">Subscribe</button>
                         </div>
                     </form>

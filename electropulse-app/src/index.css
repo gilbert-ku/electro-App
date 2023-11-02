@@ -336,3 +336,15 @@ body {
 .card-img-top{
   height: 50%;
 }
+
+.slick-arrow {
+  background-color: #f49f0a;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  #product-card {
+    width: 10%;
+    margin: 0 auto; 
+  }
+}

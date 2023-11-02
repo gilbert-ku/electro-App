@@ -331,3 +331,8 @@ body {
 .form {
   margin-right: 3rem;
 }
+
+
+.card-img-top{
+  height: 50%;
+}

@@ -36,19 +36,18 @@ const Cards = () => {
   return (
     <>
       <div className='container'>
-        <div className='container  w-100 h-50'>
-          <h1 className='bg-warning rounded-top p-2'>Recently Viewed</h1>
+        <div className='container  w-100 '>
+          {/* <h1 className='bg-warning rounded-top p-2'>Recently Viewed</h1> */}
           <div className='container' >
-            <div className="row row-cols-1 row-cols-lg-4  g-lg-4">
-              
+          <div className="d-flex flex-wrap">              
               {data && data.map((d) => (
                 <div className="col">
-                  <div className="card border border-warning shadow p-3 mb-5 bg-body rounded " style={{ width: '18rem', height: "30rem"}} >
+                  <div className="card border border-warning shadow p-3 mb-5 bg-body rounded " style={{ width: '15rem', height: "22rem"}} >
                   {/* <img src={backgroundImg} className="card-img-top" alt="..." /> */}
                     <img src={d.image_url} className="card-img-top" alt="..." />
                     <div className="card-body">
                       <p className="card-text">{d.brand}</p>
-                      <h5 className="card-title">{d.name}</h5>
+                      <p className="card-title">{d.name}</p>
                       
                       {/* <p className="card-text">{d.description}</p> */}
                       <p className="card-text">Ksh: {d.price}</p>
@@ -66,4 +65,5 @@ const Cards = () => {
   );
 }  
 export default Cards;
+
 

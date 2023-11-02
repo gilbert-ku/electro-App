@@ -11,10 +11,10 @@ function Footer() {
             <h5>Need Help?</h5>
             <ul className="list-unstyled help-icons">
               <li className="help-icons">
-                <a id="help-icons" href='#'>Help Center</a>
+                <a id="help-icons" href='/help-centre'>Help Center</a>
               </li>
               <li className="help-icons">
-                <a id="help-icons" href='#'>Contact Us</a>
+                <a id="help-icons" href='/contact-us'>Contact Us</a>
               </li>
             </ul>
           </div>
@@ -22,7 +22,7 @@ function Footer() {
             <h5>About</h5>
             <ul className="list-unstyled help-icons">
               <li className="help-icons">
-                <a id="help-icons" href='#'>About us</a>
+                <a id="help-icons" href='/about-us'>About us</a>
               </li>
               <li className="help-icons">
                 <a id="help-icons" href='#'>Terms & conditions</a>

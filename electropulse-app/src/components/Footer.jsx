@@ -4,7 +4,8 @@ import { FaInstagram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="footer bg-dark">
+    
+    <footer className="footer bg-dark contain" >
       <div className="container text-start">
         <div className="row">
           <div className="col-lg-3 col-md-6 ">

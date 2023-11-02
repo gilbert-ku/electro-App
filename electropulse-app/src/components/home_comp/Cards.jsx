@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
 
 const Cards = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   // set state to handle clicked cards
-  const [selectedCards, setSelectedCards]  = useState([]);
+ 
 
+  // fetch data
   useEffect(() => {
     const fetchData = async () => {
-      const options = {
-        method: 'GET',
-        url: 'https://kohls.p.rapidapi.com/categories/list',
-        headers: {
-          // new api-key
-          'X-RapidAPI-Key': '7dbd3d40c1msh64e1b5f9d603720p144c39jsn79aa9126d0f2',
-          'X-RapidAPI-Host': 'kohls.p.rapidapi.com',
-        },
-      };
-
       try {
-        const response = await axios.request(options);
-        console.log(setData(response.data));
+        const response = await axios.get("http://127.0.0.1:5555/products");
+        setData(response.data);
+        console.log( response.data); 
+
       } catch (error) {
-        setError(error);
+        console.error("Error fetching data:", error);
+        setError("Error fetching data");
       }
     };
 
@@ -31,70 +27,42 @@ const Cards = () => {
   }, []);
 
 
+
   // onclick event for the recent views cards
 
-  const handleCardClick = (CardId) => {
 
-    setSelectedCards(prevSelectedCards => [...prevSelectedCards, CardId]);
+  return (
+    <>
+      <div className='container'>
+        <div className='container  w-100 h-50'>
+          <h1 className='bg-warning'>Recently Viewed</h1>
+          <div className='container'>
+            <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+              
+              {data && data.map((d) => (
+                <div className="col p-2">
+                  <div className="card border border-warning" style={{ width: '18rem', height: "30rem"}} >
+                  {/* <img src={backgroundImg} className="card-img-top" alt="..." /> */}
+                    <img src={d.image_url} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                      <p className="card-text">{d.brand}</p>
+                      <h5 className="card-title">{d.name}</h5>
+                      
+                      {/* <p className="card-text">{d.description}</p> */}
+                      <p className="card-text">Ksh: {d.price}</p>
+                    </div>
+                    
+                  </div>
+                </div>
 
-    console.log(`Card with ID ${CardId} clicked!`);
-    
-  }
-
-
-return (
-  <>
-
-  
-    <div className="container">
-      <h5 className="text-warning">last viewed</h5>
-      {/* Render the selected cards in a separate div */}
-      <div className="row row-cols-2 row-cols-lg-4 g-1 g-lg-3">
-        {selectedCards.map((selectedCard) => (
-          <div className="col" key={selectedCard.ID}>
-            <div className="shadow p-2 m-1 my-3 bg-white rounded-3 border border-warning" id="selected-cards">
-              {selectedCard.name}
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-
-      
-
-      <div className="container">
-        {/* handles error message */}
-        {error && <p>Error: {error.message}</p>}
-        {data && (
-          <div className="bg-light">
-            {data.payload.categories.map((category) => (
-              <div key={category.ID} className="container text-center my-5">
-                {/* category name */}
-                <div className="container bg-warning rounded-top-3 mb-3">
-                  <h1>{category.name}</h1>
-                </div>
-
-                <div className="row row-cols-2 row-cols-lg-4 g-1 g-lg-3" id="parent-cards">
-                  {category.categories.map((nestedCategory) => (
-                    <div className="container" key={nestedCategory.ID}>
-                      {/* cards */}
-                      <div
-                        className="col shadow p-2 m-1 my-3 bg-white rounded-3 border border-warning" id="cards"
-                        onClick={() => handleCardClick(nestedCategory)}
-                      >
-                        {nestedCategory.name}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  </>
-);
-}
+        </div>
+      </div>    
+    </>
+  );
+}  
 export default Cards;
 
 

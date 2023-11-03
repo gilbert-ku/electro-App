@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import Image from '../assets/image/background.jpeg';
 import Cards from './home_comp/Cards';
 import Brand from './home_comp/Brand';
-import CartBuy from './home_comp/CartBuy';
+// import CartBuy from './home_comp/CartBuy';
 import { FaWallet, FaQuestionCircle } from 'react-icons/fa';
 import log from "../assets/image/Screenshot from 2023-10-24 13-46-49.png"
 

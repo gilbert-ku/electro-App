@@ -4,8 +4,11 @@ import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import Image from '../assets/image/background.jpeg';
 import Cards from './home_comp/Cards';
+import ProductsContainer from './home_comp/ProductsContainer';
 import Brand from './home_comp/Brand';
 import Cart from './home_comp/Cart';
+import { CartProvider } from 'react-use-cart';
+
 
 // import CartBuy from './home_comp/CartBuy';
 import { FaWallet, FaQuestionCircle } from 'react-icons/fa';
@@ -54,8 +57,15 @@ const Home = () => {
                 </div>
                 
             </section>
-            <Cart/>
-            <Cards />
+            
+            {/* <Cart/>
+            <CartProvider>
+                <>
+                    <Cards />
+                </>
+            </CartProvider> */}
+            <ProductsContainer />
+          
             <Newsletter />
             <Footer />
         </>

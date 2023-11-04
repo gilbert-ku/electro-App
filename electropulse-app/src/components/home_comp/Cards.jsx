@@ -84,13 +84,7 @@ const Cards = ({ data, setCartItems, cartItems, handleAddToCart }) => {
                       <p className="card-text">{selectedCard.brand}</p>
                       <p className="card-title">{selectedCard.name}</p>
                       <p className="card-text">Ksh: {selectedCard.price}</p>
-                      <button
-                        type="button"
-                        className="btn btn-outline-warning"
-                        onClick={() => handleAddToCart(selectedCard)}
-                      >
-                        Add to cart
-                      </button>
+                      
                     </div>
                   </div>
                 </div>

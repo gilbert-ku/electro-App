@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 import Cart from './Cart';
@@ -24,10 +23,29 @@ const ProductsContainer = () => {
     fetchData();
   }, []);
 
+  const handleAddToCart = (card) => {
+    const existingCartItem = cartItems.find((item) => item.id === card.id);
+
+    if (existingCartItem) {
+      setCartItems((prevCartItems) =>
+        prevCartItems.map((item) =>
+          item.id === card.id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCartItems((prevCartItems) => [...prevCartItems, { ...card, quantity: 1 }]);
+    }
+  };
+
+  const handleRemove = (id) => {
+    const arr = cartItems.filter((item) => item.id !== id);
+    setCartItems(arr);
+  };
+
   return (
     <>
-      <Cards data={data} setCartItems={setCartItems} cartItems={cartItems} />
-      <Cart cartItems={cartItems} />
+      <Cards data={data} setCartItems={setCartItems} cartItems={cartItems} handleAddToCart={handleAddToCart} />
+      <Cart cartItems={cartItems} handleRemove={handleRemove} />
     </>
   );
 };

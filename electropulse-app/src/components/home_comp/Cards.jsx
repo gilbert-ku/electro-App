@@ -5,7 +5,7 @@ import axios from 'axios';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const Cards = ({ data, setCartItems, cartItems }) => {
+const Cards = ({ data, setCartItems, cartItems, handleAddToCart }) => {
   const [selectedCards, setSelectedCards] = useState([]);
   const [autoplay, setAutoplay] = useState(true);
 
@@ -24,28 +24,8 @@ const Cards = ({ data, setCartItems, cartItems }) => {
     fetchData();
   }, []);
 
-
-  // handle add to cart
-  const handleAddToCart = (card) => {
-    const existingCartItem = cartItems.find((item) => item.id === card.id);
-
-    if (existingCartItem) {
-      setCartItems((prevCartItems) =>
-        prevCartItems.map((item) =>
-          item.id === card.id ? { ...item, quantity: item.quantity + 1 } : item
-        )
-      );
-    } else {
-      setCartItems((prevCartItems) => [...prevCartItems, { ...card, quantity: 1 }]);
-    }
-  };
-
-
-  // add to slider
   const handleCardClick = (cardId) => {
-    
-
-    setSelectedCards(prevSelectedCards => [...prevSelectedCards, cardId])
+    setSelectedCards(prevSelectedCards => [...prevSelectedCards, cardId]);
     console.log(`Card clicked with ID: ${cardId}`);
   };
 
@@ -84,14 +64,11 @@ const Cards = ({ data, setCartItems, cartItems }) => {
     ],
   };
 
-
   return (
     <>
-      {/* slider container */}
       <div className='container pt-2 pb-5'>
         <div className='container'>
           <p className='p-3'>Recently Viewed</p>
-
           <Slider {...settings}>
             {selectedCards.map((selectedCardId) => {
               const selectedCard = data.find((card) => card.id === selectedCardId);
@@ -107,13 +84,13 @@ const Cards = ({ data, setCartItems, cartItems }) => {
                       <p className="card-text">{selectedCard.brand}</p>
                       <p className="card-title">{selectedCard.name}</p>
                       <p className="card-text">Ksh: {selectedCard.price}</p>
-                      {/* <button
+                      <button
                         type="button"
                         className="btn btn-outline-warning"
                         onClick={() => handleAddToCart(selectedCard)}
                       >
                         Add to cart
-                      </button> */}
+                      </button>
                     </div>
                   </div>
                 </div>

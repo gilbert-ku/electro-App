@@ -7,6 +7,7 @@ import AboutUs from '../src/components/AboutUs';
 import ContactUs from '../src/components/ContactUs';
 import HelpCentre from '../src/components/HelpCentre';
 import SellOn from '../src/components/SellOn';
+import Payment from './components/home_comp/Payment';
 //import Navigation from '../src/components/Navigation';
 
 import './App.css';
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/help-centre" element={<HelpCentre />} />
         <Route path="sell-on-electropulse" element={<SellOn/>}/>
+        <Route path="payment" element={<Payment/>} />
       </Routes>
     </div>
   );

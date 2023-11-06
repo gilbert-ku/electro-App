@@ -1,4 +1,5 @@
 import React from 'react';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../src/components/Home';
 import Login from '../src/components/Login';
@@ -23,8 +24,8 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/help-centre" element={<HelpCentre />} />
-        <Route path="sell-on-electropulse" element={<SellOn/>}/>
-        <Route path="payment" element={<Payment/>} />
+        <Route path="/sell-on-electropulse" element={<SellOn/>}/>
+        <Route path="/payment" element={<Payment/>} />
       </Routes>
     </div>
   );

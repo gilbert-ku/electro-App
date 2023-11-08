@@ -115,17 +115,7 @@ class Order(db.Model):
     def __repr__(self):
         return f"Cart('Product id:{self.product_id}','id: {self.id}','User id:{self.user_id}'')"
     
-
-# class Reviews(db.Model):
-#     __tablename__ = "reviews"
-#     id = db.Column(db.Integer, primary_key=True)
-#     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-#     rating = db.Column(db.Integer, nullable=False)
-#     comment = db.Column(db.Text, nullable=False)
-
-#     def __repr__(self):
-#         return f"Reviews('{self.product_id}', '{self.user_id}', '{self.rating}')"    
+ 
 
 class AccessToken(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -127,3 +127,6 @@ class Order(db.Model):
 #     def __repr__(self):
 #         return f"Reviews('{self.product_id}', '{self.user_id}', '{self.rating}')"    
 
+class AccessToken(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    token = db.Column(db.String(200), nullable=False)

@@ -14,6 +14,9 @@ flask-migrate = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
 faker = "*"
+flask-serialize = "==1.0.2"
+requests = "*"
+apscheduler = "*"
 
 [dev-packages]
 
